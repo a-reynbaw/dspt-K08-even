@@ -264,7 +264,7 @@ Advanced Example:
 
         When $n \rightarrow \infty$, $g(n)$ will always be greater than $f(n) = 2^{x}\ -\ 6$
 
-## Linked Lists (Revesited)
+## 🔗 Linked Lists (Revisited)
 
 #### **Representations of Lists**
 
@@ -291,9 +291,167 @@ Advanced Example:
 
 - Worst-case time: $O(n)$; average also $O(n)$.
 
+#### Complexity Comparison Table
 
+| Operation                 | Array | Linked List |
+| ------------------------- | ----- | ----------- |
+| Length                    | O(1)  | O(n)        |
+| Insert at start           | O(n)  | O(1)        |
+| Delete last               | O(1)  | O(n)        |
+| Replace ith item          | O(1)  | O(n)        |
+| Insert/Delete at ith item | O(n)  | O(n)        |
 
-## AVL Trees
+#### Variants of Linked Lists
+
+- **Circular Linked Lists**: Last node links to the first; no distinct head/tail.
+
+- **Two-Way (Doubly) Linked Lists**: Nodes link both forward and backward.
+
+- **With Header/Rear Node**s: Special nodes store metadata (e.g., length) or provide list endpoints. 
+
+### Generalized Lists
+
+- Lists that can include sublists (recursive structure).
+
+- Nodes can store either an item or a pointer to another list (union in C).
+
+    ```c
+    typedef struct GenListTag {
+    GenListTag *Link;
+        int Atom;
+        union {
+            ItemType Item;
+            struct GenListTag *Sublist;
+        } SubNode;
+    } GenListNode;
+    ```
+
+- **Printing generalized lists**: Recursively print items or nested lists.
+
+#### Applications
+- Generalized lists appear in AI languages like **LISP**, **Prolog**, and in **Python**.
+- Useful in symbolic computation and tree-like data modeling.
+
+## 🌳 **Trees**
+#### Overview
+-  Hierarchical structure with (usually) a **root node** and **child nodes**
+-  Common uses: 
+	-  **file systems**
+	-  **search trees**
+	-  **parse trees**
+	-  **decision trees**
+	-  **game trees**
+	-  **heaps**
+
+#### Terminology
+-  **Root** : top node with no parent
+-  **Leaf** : node with no children
+-  **Internal node** : has at least one child
+-  **Depth/Level** : distance from root
+-  **Height** : maximum depth in a tree
+-  **Subtree** : tree formed from a node and its descendants
+-  **Ordered Tree** : children are arranged left to right in some specific order 
+
+## 🌳 Binary Tree
+-  Each node has at most two children
+-  It can be:
+	-  **Complete** : all levels are full *except possibly* the last
+	-  **Proper** (Full) : **every** node has **0 or 2** nodes
+	-  **Extended** : represents missing children with NULLs
+
+-  Example :
+	```
+	        R
+	       / \
+	      S   T
+	     /     \
+	    Y       X
+
+	```
+
+#### Properties of a Binary Tree
+	Let:
+	-  $n$ = total nodes
+	-  $n_I$ = internal nodes
+	-  $n_E$ = external (leaf) nodes
+	-  $h$ = height
+	
+	Key properties:
+	-  $n_E = n_I + 1$
+	- $1 \leq n_E \leq 2^{h}$
+	- $h \leq n_I \leq 2^{h} -\ 1$
+	- $log{(n+1)} - 1$ 
+
+#### Sequential Representation
+
+For **complete binary trees**, a tree can be represented using an array, sequentionaly, by using this indexing:
+
+- Left child of A[i] = A[2*i]
+- Right child of A[i] = A[2*i + 1]
+- Parent of A[i] = A[i/2]
+
+## 🌳 Heaps
+
+A **complete** binary tree where each parent $\geq$ children (**max-heap**) or parent $\leq$ children (**min-heap**)
+
+#### **Complexities**
+
+|Operation | Complexity|
+|----------|-----------|
+| insertion | $O(logn)$ |
+| removal max/min | $O(logn)$ |
+| heapify | $O(n)$ |
+| heapsort | $O(nlogn)$ |
+
+## 🔄 Tree Traversals
+
+- **Preorder**: root $\rightarrow$ left $\rightarrow$ right
+- **Inorder**: left $\rightarrow$ root $\rightarrow$ right
+- **Postorder**: left $\rightarrow$ right $\rightarrow$ root
+- **Level-Order**: top-down (DFS) , left-to-right (BFS) (uses a queue)
+
+## 🧑‍💻 Binary Tree ADT (in C)
+
+#### Key types:
+```c
+typedef struct NodeTag {
+    char Symbol;
+    struct NodeTag * LLink, * RLink;
+} TreeNode;
+```
+
+#### Traversals:
+```c
+typedef enum {PreOrder, InOrder, PostOrder} OrderOfTraversal;
+
+void Traverse(TreeNode * T, OrderOfTraversal order) {
+    if (T != NULL) { 
+        if (order == PreOrder) {
+            /* Process this node */
+            Traverse(T->LLink, order);
+            Traverse(T->RLink, order);
+        } else if (order == InOrder) {
+            Traverse(T->LLink, order);
+            /* Process this node */
+            Traverse(T->RLink, order);
+        } else {
+            Traverse(T->LLink, order);
+            Traverse(T->RLink, order);
+            /* Process this node */
+        }
+    }
+}
+```
+
+## 🌳 Binary Search Trees (BST)
+
+A **BST** is a binary tree where: left subtree $\leq$ node $\geq$ right subtree. Used for **symbol tables**, **maps** and **dictionaries**.
+
+#### Basic Operations and Complexities
+
+|
+
+## 🌳 AVL Trees
 #### **What is an AVL Tree?**
 - **AVL Tree** is a type of self-balancing binary search tree.
 - Named after inventors Adelson-Velsky and Landis.
