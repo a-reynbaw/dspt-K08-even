@@ -1298,7 +1298,7 @@ Bigger example of removal:
 ## (a, b)-Trees
 - General form of B-Trees.
 - Must satisfy:
-    - **Size property**: internal nodes (except root) have at least a and at most b children.
+    - **Size property**: internal nodes (except root which can have as few as two children) have at least a and at most b children.
     - **Depth property**: all external (leaf) nodes are at the same depth.
 
 - Height of (a, b)-Trees
@@ -1489,7 +1489,7 @@ Skip list is functionally equivalent to a balanced tree.
 - **Collision**: Two keys hash to the same address.
 - **Resolution Techniques**:
     - **Open Addressing**: linear probing or double hashing.
-        - **Linear Probing**: sequential search for next available slot.
+        - **Linear Probing**: sequential search for next available slot (looking at lower addresses). it can cause big clustering.
         - **Primary Clustering**: adjacent occupied cells lead to longer searches.
         - **Double Hashing**: uses a second hash function to calculate probe steps → reduces clustering.
     - **Separate Chaining**: linked list per bucket; space-consuming but fast.
