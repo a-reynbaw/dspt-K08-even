@@ -3,11 +3,33 @@ This file contains a "prettier" and more summarized version of the slides provid
 
 ## Contents
 
-[🔗 Linked Data Representations](#-linked-data-representations)
+- [🔗 Linked Data Representations](#linked-data-representations)
+- [🔁 Recursion](#-recursion)
+- [🧩 Modularity and Data Abstraction](#-modularity-and-data-abstraction)
+- [📚 Stacks (LIFO - Last In, First Out)](#-stacks-lifo---last-in-first-out)
+- [🔁 Queues (FIFO - First In, First Out)](#-queues-fifo---first-in-first-out)
+- [🧠 Summary Table](#-summary-table)
+- [🔍 Introduction to the Analysis of Algorithms](#-introduction-to-the-analysis-of-algorithms)
+- [🔗 Linked Lists (Revisited)](#-linked-lists-revisited)
+- [🌳 Trees](#-trees)
+- [🌳 Binary Tree](#-binary-tree)
+- [🌳 Heaps](#-heaps)
+- [🔄 Tree Traversals](#-tree-traversals)
+- [🧑‍💻 Binary Tree ADT (in C)](#-binary-tree-adt-in-c)
+- [🌳 Binary Search Trees (BST)](#-binary-search-trees-bst)
+- [🌳 AVL Trees](#-avl-trees)
+- [🌳 Multi-Way Search Trees](#-multi-way-search-trees)
+- [🌳 (2, 4) Trees (or 2-3-4 Trees)](#-2-4-trees-or-2-3-4-trees)
+- [🌳 Red-Black Trees](#-red-black-trees)
+- [🌳 B-Trees](#-b-trees)
+- [⏭️ Skip List](#-skip-list)
+- [📌 Hashing](#-hashing)
+- [📘 Graphs — Summary](#-graphs--summary)
+- [📗 Weighted Graphs](#-weighted-graphs)
+- [🔷 Disjoint Set Data Structures](#-disjoint-set-data-structures)
+- [🔶 Minimum Spanning Trees (MST)](#-minimum-spanning-trees-mst)
 
-[🔁 Recursion](#-recursion)
-
-## 🔗 Linked Data Representations
+## Linked Data Representations
 
 ### Key Concepts:
 - **Linked Structures**: Lists, stacks, queues, sets, and trees are dynamic and flexible, ideal when data sizes or shapes are unpredictable.
@@ -1653,4 +1675,47 @@ You can later use `find_set(a) == find_set(b)` to check is `a` and `b` are in th
     - Improvement: **weighted union** (apprend smaller to larger set)
 
 3) **Disjoint-Set Forests (Quick-Union)**
-    - Sets represented as trees (each node points to its parent).
+    - Sets represented as **trees** (each node points to its parent).
+    - `find_set()` walks up to the tree to find the root.
+    - `union` link roots of two trees.
+
+### 🔧 Heuristics
+- **weighted union**: link smaller tree under larger.
+- **path compression**: flatten tree during `find()` by making nodes point to the root.
+- combined, they make operations very fast:
+    **Nearly constant time**: $O(\text{α}(n))$ per operation (α = inverse Ackermann function)
+
+## 🔶 Minimum Spanning Trees (MST)
+### 📌 Definition
+Given a **connected**, **weighted**, **undirected graph**, an MST is subset of edges that:
+- Connects **all vertices**
+- Forms a **tree** (no cycles)
+- Has **minimum total weight**.
+
+### 🔍 Properties
+- **Cycle Property**: in a cycle, the **heaviest** edge won't be in the MST
+- **Cut Property**: among all edges crossing a cut, the **lightest** on will be in the MST.
+
+### 🚀 Algorithms
+- 🌲 **Kruskal’s Algorithm**
+    - Greedy algorithm:
+        1) Sort all edges by weight
+        2) Initialize each vertex as a separate set
+        3) For each edge `(u, v)` in order:
+            - If `u` and `v` are in **different sets**, add edge to MST and `union(u, v)`
+    - Uses **disjoint-set forest with path compression**
+    - Time complexity: $O((n+m)logn)$
+
+- 🌩️ **Prim-Jarnik’s Algorithm**
+    - Similar to Dijkstra's shortest path:
+        1) Start from any node
+        2) Use a **priority queue** to pick the smallest edge connecting the currenting the current tree to a new node.
+        3) Add the node and repeat until all nodes are included.
+
+    - Efficient for **dense graphs**
+    - Time complexity: $O((n+m)logn)$
+
+### 🧠 Data Structures Used
+- **Adjacency Lists**: Efficient edge lookups.
+- **Priority Queues (Min-Heaps)**: Fast access to smallest edge
+- **Disjoint Sets**: For Kruskal's algorithm (with weighted union + path compression).
