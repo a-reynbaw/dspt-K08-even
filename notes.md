@@ -1582,4 +1582,75 @@ Widely used in:
     - Explores **level-by-level** (like level-order traversal).
     - Good for **finding shortest path** in **unweighted** graphs.
 
-## 📗 Weighted Graphs — Summary
+## 📗 Weighted Graphs
+### 🔹 What is a weighted graph?
+- A graph where each edge has a **weight** (e.g., distance, cost, time).
+- Can be **directed** or **undirected**.
+- Just like for unweighted ones, weighted graphs can be represented by:
+    - **Adjacency Matrix**: Instead of 1 (to show connection), the matrix can store the edge weight.
+    - **Adjacency List**: Use *pairs* to store both the neighbor and weight $\rightarrow$ `(neighbor, weight)`.
+
+### 🔹 Path Weight & Shortest Paths
+- **Path weight** = sum of edge weights in the path.
+- **Shortest path**: path with minimal total weight from source to destination.
+- **Single-source shortest path problem**: Find shortest paths from source 𝑠 to all other vertices.
+
+## ⚙️ Dijkstra’s Algorithm
+### 🔹 Overview
+- Solves **single-source shortest path** for graphs with **non-negative edge weights**.
+- Uses a **greedy approach**: at each step, pick the closest unvisited vertex.
+
+### 🔹 Steps
+1) Initialize:
+    - set distance to source = 0 and others = $\infty$
+    - $W = {s}$: set of processed vertices
+2) Repeat until all vertices are in $W$:
+    - Choose $w \in V-W$ with **smallest distance**
+    - Add $w$ to $W$
+    - **Relaxation step**: update distances to neighbors $u$ of $w$:
+        $ShortestDistance[u] = min(ShortestDistance[u], ShortestDistance[w] + T[w][u])$
+
+### 🔹 Complexity
+- **With adjacency matrix**: $O(n^2)$
+- **With adjacency list** + **min-heap** (priority queue): $O((n+e)logn)$
+
+### ✅ Correctness of Dijkstra
+- **Maintains invariant**: distance to every vertex in 𝑊 is the shortest.
+- **Proof**: any alternative shorter path would violate the greedy choice made.
+
+## 🔷 Disjoint Set Data Structures
+### 📌 Purpose
+Disjoint sets are used to keep track of **non-overlapping groups** of items and answer questions like:
+- Are items in the same group?
+- Combine two groups into one.
+
+### 🧩 Main Operations
+1) `make_set(x)`: Creates a set with only `x`.
+2) `find_set(x)`: Returns the **representative** (leader) of the set containing `x`.
+3) `union(x, y)`: Combines the sets containing `x` and `y`.
+
+### 🧠 Applications
+- **Connected components** in graphs.
+- **Kruskal's algorithm** for MSTs.
+- **Managing equivalence relations** (e.g., type aliases in C).
+
+### 🔍 Example: Graph Components
+To find connected parts of a graph:
+1) Use `make_set(v)` for each node (to init them)
+2) For each edge `(u, v)`, `union(u, v)` is `find_set(u) != find_set(v)`
+
+You can later use `find_set(a) == find_set(b)` to check is `a` and `b` are in the same component.
+
+### ⚙️ Implementations
+1) **Quick-Find**
+    - Uses an `id[]` array where `id[x]` = set ID.
+    - Fast `find`, **slow** `union` (needs scanning the whole array).
+    - Time complexity: $O(n \times m)$
+
+2) **Linked Lists**
+    - Each set is a list with a representative at the head.
+    - `union` need to **update pointers**, which is slow if lists are long
+    - Improvement: **weighted union** (apprend smaller to larger set)
+
+3) **Disjoint-Set Forests (Quick-Union)**
+    - Sets represented as trees (each node points to its parent).
