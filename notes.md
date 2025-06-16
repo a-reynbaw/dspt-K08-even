@@ -4,30 +4,29 @@ This file contains a "prettier" and more summarized version of the slides provid
 ## Contents
 
 - [🔗 Linked Data Representations](#linked-data-representations)
-- [🔁 Recursion](#-recursion)
-- [🧩 Modularity and Data Abstraction](#-modularity-and-data-abstraction)
-- [📚 Stacks (LIFO - Last In, First Out)](#-stacks-lifo---last-in-first-out)
-- [🔁 Queues (FIFO - First In, First Out)](#-queues-fifo---first-in-first-out)
-- [🧠 Summary Table](#-summary-table)
-- [🔍 Introduction to the Analysis of Algorithms](#-introduction-to-the-analysis-of-algorithms)
-- [🔗 Linked Lists (Revisited)](#-linked-lists-revisited)
-- [🌳 Trees](#-trees)
-- [🌳 Binary Tree](#-binary-tree)
-- [🌳 Heaps](#-heaps)
-- [🔄 Tree Traversals](#-tree-traversals)
-- [🧑‍💻 Binary Tree ADT (in C)](#-binary-tree-adt-in-c)
-- [🌳 Binary Search Trees (BST)](#-binary-search-trees-bst)
-- [🌳 AVL Trees](#-avl-trees)
-- [🌳 Multi-Way Search Trees](#-multi-way-search-trees)
-- [🌳 (2, 4) Trees (or 2-3-4 Trees)](#-2-4-trees-or-2-3-4-trees)
-- [🌳 Red-Black Trees](#-red-black-trees)
-- [🌳 B-Trees](#-b-trees)
-- [⏭️ Skip List](#-skip-list)
-- [📌 Hashing](#-hashing)
-- [📘 Graphs — Summary](#-graphs--summary)
-- [📗 Weighted Graphs](#-weighted-graphs)
-- [🔷 Disjoint Set Data Structures](#-disjoint-set-data-structures)
-- [🔶 Minimum Spanning Trees (MST)](#-minimum-spanning-trees-mst)
+- [🔁 Recursion](#recursion)
+- [🧩 Modularity and Data Abstraction](#modularity-and-data-abstraction)
+- [📚 Stacks (LIFO - Last In, First Out)](#stacks-lifo---last-in-first-out)
+- [🔁 Queues (FIFO - First In, First Out)](#queues-fifo---first-in-first-out)
+- [🔍 Introduction to the Analysis of Algorithms](#introduction-to-the-analysis-of-algorithms)
+- [🔗 Linked Lists (Revisited)](#linked-lists-revisited)
+- [🌳 Trees](#trees)
+- [🌳 Binary Tree](#binary-tree)
+- [🌳 Heaps](#heaps)
+- [🔄 Tree Traversals](#tree-traversals)
+- [🧑‍💻 Binary Tree ADT (in C)](#binary-tree-adt-in-c)
+- [🌳 Binary Search Trees (BST)](#binary-search-trees-bst)
+- [🌳 AVL Trees](#avl-trees)
+- [🌳 Multi-Way Search Trees](#multi-way-search-trees)
+- [🌳 (2, 4) Trees (or 2-3-4 Trees)](#2-4-trees-or-2-3-4-trees)
+- [🌳 Red-Black Trees](#red-black-trees)
+- [🌳 B-Trees](#b-trees)
+- [⏭️ Skip List](#skip-list)
+- [📌 Hashing](#hashing)
+- [📘 Graphs — Summary](#graphs--summary)
+- [📗 Weighted Graphs](#weighted-graphs)
+- [🔷 Disjoint Set Data Structures](#disjoint-set-data-structures)
+- [🔶 Minimum Spanning Trees (MST)](#minimum-spanning-trees-mst)
 
 ## Linked Data Representations
 
@@ -82,7 +81,7 @@ This file contains a "prettier" and more summarized version of the slides provid
 - delete last node:
     Requires `NodeType ** L` to modify the head if necessary.
 
-## 🔁 Recursion
+## Recursion
 
 ### Introduction:
 
@@ -124,7 +123,7 @@ Advanced Example:
 
     - Recursive function `MoveTowers` calls itself three times.
 
-## 🧩 Modularity and Data Abstraction
+## Modularity and Data Abstraction
 
 ### **Principles**:
 
@@ -164,7 +163,7 @@ Advanced Example:
     Uses dynamic memory, returns opaque handles.
 
 
-## 📚 Stacks (LIFO - Last In, First Out)
+## Stacks (LIFO - Last In, First Out)
 
 **Real-world analogies: Plates stack, browser backtracking, function calls.**
 
@@ -203,7 +202,7 @@ Advanced Example:
         - Dynamically growing.
         - Each node points to previous.
 
-## 🔁 Queues (FIFO - First In, First Out)
+## Queues (FIFO - First In, First Out)
 **Real-world analogies**: Printer queues, customer service lines.
 
 ### Queue ADT Operations:
@@ -232,7 +231,7 @@ Advanced Example:
 ### Advanced Abstraction:
 - Hide implementation details via `QPointer` and interface functions like `QUEUEput`, `QUEUEget`, etc.
 
-## 🧠 Summary Table
+### Summary Table
 
 |Concept  | Stack   | Queue |
 |---------|---------|-------|
@@ -241,7 +240,7 @@ Advanced Example:
 |Key Ops | Push, Pop | Insert, Remove |
 |Implementations | Array, Linked List | Circular Array, Linked List|
 
-## 🔍 Introduction to the Analysis of Algorithms
+## Introduction to the Analysis of Algorithms
 **Goal**: Understand how to evaluate algorithm performance independently of hardware or language differences.
 
 ### Key Concepts:
@@ -286,7 +285,7 @@ Advanced Example:
 
         When $n \rightarrow \infty$, $g(n)$ will always be greater than $f(n) = 2^{x}\ -\ 6$
 
-## 🔗 Linked Lists (Revisited)
+## Linked Lists (Revisited)
 
 ### **Representations of Lists**
 
@@ -354,7 +353,7 @@ Advanced Example:
 - Generalized lists appear in AI languages like **LISP**, **Prolog**, and in **Python**.
 - Useful in symbolic computation and tree-like data modeling.
 
-## 🌳 **Trees**
+## **Trees**
 ### Overview
 -  Hierarchical structure with (usually) a **root node** and **child nodes**
 -  Common uses: 
@@ -374,7 +373,7 @@ Advanced Example:
 -  **Subtree** : tree formed from a node and its descendants
 -  **Ordered Tree** : children are arranged left to right in some specific order 
 
-## 🌳 Binary Tree
+## Binary Tree
 -  Each node has at most two children
 -  It can be:
 	-  **Complete** : all levels are full *except possibly* the last
@@ -412,9 +411,9 @@ For **complete binary trees**, a tree can be represented using an array, sequent
 - Right child of A[i] = A[2*i + 1]
 - Parent of A[i] = A[i/2]
 
-## 🌳 Heaps
+## Heaps
 
-A **complete** binary tree where each parent $\geq$ children (**max-heap**) or parent $\leq$ children (**min-heap**)
+A **complete** (if the last level isn't full, all the nodes at that level must be on the left, so an array like the one above can be used for its representation) binary tree where each parent $\geq$ children (**max-heap**) or parent $\leq$ children (**min-heap**)
 
 ### **Complexities**
 
@@ -425,14 +424,14 @@ A **complete** binary tree where each parent $\geq$ children (**max-heap**) or p
 | heapify | $O(n)$ |
 | heapsort | $O(nlogn)$ |
 
-## 🔄 Tree Traversals
+## Tree Traversals
 
 - **Preorder**: root $\rightarrow$ left $\rightarrow$ right
 - **Inorder**: left $\rightarrow$ root $\rightarrow$ right
 - **Postorder**: left $\rightarrow$ right $\rightarrow$ root
 - **Level-Order**: top-down (DFS) , left-to-right (BFS) (uses a queue)
 
-## 🧑‍💻 Binary Tree ADT (in C)
+## Binary Tree ADT (in C)
 
 ### Key types:
 ```c
@@ -465,7 +464,7 @@ void Traverse(TreeNode * T, OrderOfTraversal order) {
 }
 ```
 
-## 🌳 Binary Search Trees (BST)
+## Binary Search Trees (BST)
 
 A **BST** is a binary tree where: left subtree $\leq$ node $\geq$ right subtree. Used for **symbol tables**, **maps** and **dictionaries**.
 
@@ -610,7 +609,7 @@ Alternatively
 | Worst (chain) | $O(n)$ | $O(n)$ |
 | Average | $O(logn)$ | $O(logn)$ |
 
-## 🌳 AVL Trees
+## AVL Trees
 ### **What is an AVL Tree?**
 - **AVL Tree** is a type of self-balancing binary search tree.
 - Named after inventors Adelson-Velsky and Landis.
@@ -786,7 +785,7 @@ Since an AVL tree is a binary search tree, the search algorithm remains the same
 | insertion | $O(logn)$ |
 | deletion | $O(logn)$ |
 
-## 🌳 Multi-Way Search Trees
+## Multi-Way Search Trees
 - each internal node stores more than one key
 - search trees
 - ordered (linear ordering defined for the children of each node) - can identify children being first, second,..., last.
@@ -821,7 +820,7 @@ where:
 - **(a, b) Trees**
 - **B-Trees**
 
-## 🌳 (2, 4) Trees (or 2-3-4 Trees)
+## (2, 4) Trees (or 2-3-4 Trees)
 Multiway Search Trees with the following properties:
 - **Size property**: internal nodes have $k$ amount of keys, where $1\ \leq\ k\ \leq\ 3$ and $v$ children, where $2\ \leq\ v\ \leq\ 4$
 
@@ -971,7 +970,7 @@ Here are some exampled of removal in a (2, 4) Tree:
 
 **NOTE**: the code for (2, 4) Trees implementations is in *`hws/hw2/question5`*
 
-## 🌳 Red-Black Trees
+## Red-Black Trees
 Data structures which require **$O(1)$ structural changes** after an update in order to remain balanced. They are **binary search trees** with nodes colored **red and black** in a way that satisfies the following properties:
 - **Root Property**: The **root is black**
 - **External Property**: Every **external node is black**
@@ -1287,7 +1286,7 @@ Bigger example of removal:
 - red-black tree data structure is **slightly more complicated** than its corresponding (2,4) tree.
 - however, the red-black tree has the conceptual advantage that **only a constant number of trinode restructurings are ever needed** to restore the balance after an update.
 
-## 🌳 B-Trees
+## B-Trees
 ### 📦 What Are B-Trees?
 - B-Trees are multi-way balanced search trees designed for efficient access on external memory (e.g., hard disks).
 - They generalize binary search trees by allowing nodes to have more than two children and by minimizing disk I/O.
@@ -1296,7 +1295,7 @@ Bigger example of removal:
 - Disk access is ~100,000–1,000,000x slower than RAM access.
 - B-Trees reduce the number of costly disk reads during search, insert, and delete operations.
 
-## 🌲 (a, b)-Trees
+## (a, b)-Trees
 - General form of B-Trees.
 - Must satisfy:
     - **Size property**: internal nodes (except root) have at least a and at most b children.
@@ -1359,7 +1358,7 @@ Both **Insertion** and **Deletion** are similar to the ones done at (2, 4) Trees
 | Best for       | Balanced search | Indexing, range queries |
 
 
-## ⏭️ Skip List
+## Skip List
 - A skip list is a probabilistic data structure that allows fast search, insertion, and deletion, similar to balanced trees.
 - Think of it as a tower of linked lists, where each node can have multiple "forward pointers" allowing it to skip over others.
 
@@ -1470,7 +1469,7 @@ Skip list is functionally equivalent to a balanced tree.
 
 ![alt text](assets/skip_lists02.png)
 
-## 📌 Hashing
+## Hashing
 - Hashing is a method to implement symbol tables by converting keys into addresses via a hash function, allowing near-constant-time operations.
 - Unlike search-based methods (e.g., binary search trees), hashing attempts **direct access** to data.
 
@@ -1544,7 +1543,7 @@ Widely used in:
 - Browser caches
 - Peer-to-peer systems
 
-## 📘 Graphs — Summary
+## Graphs — Summary
 ### 🔹 What is a Graph?
 - A graph $G\ =\ (V,E)$ is a set of **vertices** (nodes) and **edges** (connections).
 - Edges can be:
@@ -1604,7 +1603,7 @@ Widely used in:
     - Explores **level-by-level** (like level-order traversal).
     - Good for **finding shortest path** in **unweighted** graphs.
 
-## 📗 Weighted Graphs
+## Weighted Graphs
 ### 🔹 What is a weighted graph?
 - A graph where each edge has a **weight** (e.g., distance, cost, time).
 - Can be **directed** or **undirected**.
@@ -1617,7 +1616,7 @@ Widely used in:
 - **Shortest path**: path with minimal total weight from source to destination.
 - **Single-source shortest path problem**: Find shortest paths from source 𝑠 to all other vertices.
 
-## ⚙️ Dijkstra’s Algorithm
+## Dijkstra’s Algorithm
 ### 🔹 Overview
 - Solves **single-source shortest path** for graphs with **non-negative edge weights**.
 - Uses a **greedy approach**: at each step, pick the closest unvisited vertex.
@@ -1640,13 +1639,13 @@ Widely used in:
 - **Maintains invariant**: distance to every vertex in 𝑊 is the shortest.
 - **Proof**: any alternative shorter path would violate the greedy choice made.
 
-## 🔷 Disjoint Set Data Structures
+## Disjoint Set Data Structures
 ### 📌 Purpose
 Disjoint sets are used to keep track of **non-overlapping groups** of items and answer questions like:
 - Are items in the same group?
 - Combine two groups into one.
 
-### 🧩 Main Operations
+### Main Operations
 1) `make_set(x)`: Creates a set with only `x`.
 2) `find_set(x)`: Returns the **representative** (leader) of the set containing `x`.
 3) `union(x, y)`: Combines the sets containing `x` and `y`.
@@ -1685,7 +1684,7 @@ You can later use `find_set(a) == find_set(b)` to check is `a` and `b` are in th
 - combined, they make operations very fast:
     **Nearly constant time**: $O(\text{α}(n))$ per operation (α = inverse Ackermann function)
 
-## 🔶 Minimum Spanning Trees (MST)
+## Minimum Spanning Trees (MST)
 ### 📌 Definition
 Given a **connected**, **weighted**, **undirected graph**, an MST is subset of edges that:
 - Connects **all vertices**
