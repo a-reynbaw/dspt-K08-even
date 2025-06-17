@@ -2,7 +2,7 @@
 
 ## Overview
 
-This are my solutions for the second homework (only questions 5 and 6) for Data Structures and Programming Techniques (Even), Spring 2025. You can find the description file in this directory.
+This are my solutions for the second assignment (only questions 5 and 6) for Data Structures and Programming Techniques (Even), Spring 2025. You can find the description file in this directory.
 
 ## Details
 ### Question 5
