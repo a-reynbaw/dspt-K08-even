@@ -1,0 +1,44 @@
+==129301== Memcheck, a memory error detector
+==129301== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==129301== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==129301== Command: ./q5
+==129301== 
+==129301== 
+==129301== Process terminating with default action of signal 2 (SIGINT)
+==129301==    at 0x49791F2: read (read.c:26)
+==129301==    by 0x48FBB9E: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:517)
+==129301==    by 0x48FCF85: _IO_default_uflow (genops.c:362)
+==129301==    by 0x48CF27F: __vfscanf_internal (vfscanf-internal.c:627)
+==129301==    by 0x48CE161: __isoc99_scanf (isoc99_scanf.c:30)
+==129301==    by 0x10933A: main (main.c:41)
+
+*************
+Creating Tree...
+
+Tree Created!
+*************
+
+========= MENU =========
+1. Insert
+2. Delete
+3. Search
+4. Find
+5. Sort
+6. Count
+7. Exit
+========================
+Enter your choice: ==129301== 
+==129301== HEAP SUMMARY:
+==129301==     in use at exit: 96 bytes in 1 blocks
+==129301==   total heap usage: 3 allocs, 2 frees, 9,312 bytes allocated
+==129301== 
+==129301== LEAK SUMMARY:
+==129301==    definitely lost: 0 bytes in 0 blocks
+==129301==    indirectly lost: 0 bytes in 0 blocks
+==129301==      possibly lost: 0 bytes in 0 blocks
+==129301==    still reachable: 96 bytes in 1 blocks
+==129301==         suppressed: 0 bytes in 0 blocks
+==129301== Rerun with --leak-check=full to see details of leaked memory
+==129301== 
+==129301== For lists of detected and suppressed errors, rerun with: -s
+==129301== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
