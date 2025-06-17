@@ -2,15 +2,16 @@
 
 ## Overview
 
-This are my solutions for the second homework for Data Structures and Programming Techniques (Even), Spring 2025. You can find the description file in this directory.
+This are my solutions for the second homework (only questions 5 and 6) for Data Structures and Programming Techniques (Even), Spring 2025. You can find the description file in this directory.
 
 ## Details
-| Question | Grade |
-|----------|-------|
-|1 | 10/10 |
-|2 | 8/10  |
-|3 | 10/10 |
-|4 |20/50|
-|5|120/120|
-|6|200/200|
+### Question 5
+Implementation of **(2, 4) Tree Abstract Data Structure (ADT)**, with various functions (see more in solution `README` file)
+
+Grade: 120/120
+
+### Question 6
+Implementation of **kd-Tree Data Structure (2d specifically)**, with various functions (see more in solution `README` file)
+
+Grade: 200/200
 
